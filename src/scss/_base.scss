@@ -1,0 +1,9 @@
+@import './reset/normalize';
+@import './reset/reset';
+@import './reset/typography';
+
+@include responsive(large){
+    html{
+        font-size: 20px;
+    }
+}

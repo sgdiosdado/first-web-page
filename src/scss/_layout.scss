@@ -1,0 +1,153 @@
+.site {
+  display: grid;
+  height: 100%;
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+  grid-template-rows: var(--height-header) 3fr 1fr;
+}
+.header {
+  grid-area: header;
+}
+
+.main {
+  grid-area: main;
+}
+.footer {
+  grid-area: footer;
+}
+.content{
+  @include responsive(500px){
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  @include responsive(large){
+    max-width: map-get($breakpoints, medium);
+  }
+}
+.navbar {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  margin: 0 1rem;
+}
+.logo {
+  display: none;
+  height: 100%;
+  &_img {
+    width: 100%;
+    height: 100%;
+  }
+}
+.banner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 30% 0;
+
+  &_span {
+    display: block;
+  }
+  @include responsive(large){
+    padding: calc(10% - var(--height-header)) 0 10% 0;
+    height: 50vh;
+  }
+}
+
+.about {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1rem 1rem;
+
+  &_img {
+    min-width: 6rem;
+  }
+  &_title {
+    margin-bottom: 1.5rem;
+  }
+  &_p {
+    margin-bottom: 1.25rem;
+  }
+
+  &_item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+  }
+
+  &_item_p {
+    width: 11rem;
+
+    @include responsive(360px) {
+      width: auto;
+    }
+  }
+
+  &_right {
+    @include responsive(360px) {
+      margin-left: 1rem;
+    }
+  }
+
+  &_left {
+    @include responsive(360px) {
+      margin-right: 1rem;
+    }
+  }
+}
+
+.work {
+  padding-left: 0.5rem;
+  &_p {
+    margin-bottom: 1.5rem;
+    position: relative;
+  }
+
+  &_title{
+    position: relative;
+  }
+  $side: 0.5rem;
+  // Dot
+  &_title::before {
+    content: "";
+    height: $side;
+    width: $side;
+    display: inline-block;
+    position: absolute;
+    transform: translateY(100%);
+    left: -1.2rem;
+  }
+  // Bar
+  &_p::before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    width: $side;
+    height: 110%;
+    top: -1rem;
+    left: -1.2rem;
+  }
+}
+
+.footer {
+  padding: 1rem;
+}
+
+.form {
+  width: 100%;
+
+  &_input,
+  &_ta {
+    padding: 0.5rem;
+    margin-bottom: 0.75rem;
+  }
+  &_ta {
+    width: 100%;
+    height: 8rem;
+    resize: none;
+  }
+}

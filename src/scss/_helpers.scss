@@ -1,0 +1,29 @@
+:root{
+
+    --height-header: 3rem;
+
+    --color-primary: #72ddff;
+    --color-secondary: #ff72a8;
+    --color-tertiary: #ffe572;
+}
+
+$color-secondary : #ff72a8;
+
+$breakpoints: (
+  medium: 640px,
+  large: 1024px,
+  xlarge: 1200px,
+  xxlarge: 1440px
+);
+
+@mixin responsive($bp) {
+  @if map-has-key($breakpoints, $bp) {
+    @media screen and (min-width: map-get($breakpoints, $bp)) {
+      @content;
+    }
+  } @else {
+    @media screen and (min-width: $bp) {
+      @content;
+    }
+  }
+}

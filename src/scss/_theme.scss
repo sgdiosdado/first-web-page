@@ -1,0 +1,92 @@
+@import url("https://fonts.googleapis.com/css?family=Comfortaa:400,700|Playball&display=swap");
+
+.site {
+  font-family: "Comfortaa", cursive;
+}
+.header {
+  background-color: var(--color-primary);
+}
+.banner {
+  background-color: var(--color-primary);
+  text-align: center;
+  line-height: 1;
+
+  &_span {
+    font-family: "Playball", cursive;
+    font-size: 3rem;
+    margin-bottom: 1.25rem;
+  }
+  &_p {
+    font-size: 0.7rem;
+  }
+}
+
+.about {
+  &_p,
+  &_item_p {
+    font-size: 0.75rem;
+    text-align: center;
+    line-height: 1.5;
+  }
+  &_item_p {
+    text-align: left;
+  }
+  &_title {
+    text-align: center;
+    font-weight: 700;
+  }
+}
+
+.work {
+  line-height: 1.5rem;
+  &_title {
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 0.75rem;
+    &::before {
+      background-color: var(--color-primary);
+      border-radius: 50%;
+    }
+    &:nth-of-type(2)::before {
+      background-color: var(--color-secondary);
+    }
+    &:nth-of-type(3)::before {
+      background-color: var(--color-tertiary);
+    }
+  }
+  &_date {
+    font-size: 0.625rem;
+  }
+  &_p {
+    font-size: 0.75rem;
+    &::before {
+      background: var(--color-primary);
+      border-radius: 1rem;
+      &:nth-of-type(2) {
+        background-color: var(--color-primary);
+      }
+    }
+    &:nth-of-type(4)::before {
+      background-color: var(--color-secondary);
+    }
+    &:nth-of-type(6)::before {
+      background-color: var(--color-tertiary);
+    }
+  }
+}
+
+.footer {
+  background-color: var(--color-primary);
+}
+
+.form {
+  font-size: 0.75rem;
+  &_input,
+  &_ta {
+    border-radius: 1em;
+    border: 1px solid #333;
+  }
+}
+::placeholder{
+    font-style: italic;
+}

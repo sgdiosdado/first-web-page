@@ -1,0 +1,13 @@
+.button{
+    background-color: var(--color-secondary);
+    border-radius: 1em;
+    padding: 0.5em 1.75em;
+    color: white;
+    font-weight: 700;
+    border: 1px solid darken($color-secondary, 50%);
+}
+
+.right{
+    display: flex;
+    justify-content: flex-end;
+}
